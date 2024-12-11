@@ -92,7 +92,7 @@
          </pre>
            </p>
        <h3 id="Introduction">Introduction</h3>
-       <p>
+       <p id="Introduction_InText">
          <pre>
            Water is essential for human survival, and its quality is crucial for people’s health and well-being.
            Among the many different contaminants that can affect water quality, heavy metals pose some of the greatest risks.
@@ -105,7 +105,7 @@
        </p>
       
        <h3 id=”What Are Heavy Metals and Why Are They a Concern?”>What Are Heavy Metals and Why Are They a Concern?</h3>
-       <p>
+       <p id=”What Are Heavy Metals and Why Are They a Concern?_InText">
          <pre>
            Heavy metals are naturally occurring elements with high atomic weights and densities
            that can be toxic to humans even in small concentrations. These metals tend to build up
@@ -124,7 +124,7 @@
        </p>
 
        <h3 id="Methods of Removing Heavy Metals from Drinking Water">Methods of Removing Heavy Metals from Drinking Water</h3>
-       <p>
+       <p id="Methods of Removing Heavy Metals from Drinking Water_InText">
          <pre>
            Activated Carbon Filtration
 
@@ -166,7 +166,7 @@
        </p>
          
         <h3 id="Importance of Removing Heavy Metals from Drinking Water">Importance of Removing Heavy Metals from Drinking Water</h3>   
-    <p>
+    <p id="Importance of Removing Heavy Metals from Drinking Water_InText">
       <pre>
         Health Protection
 
@@ -196,7 +196,7 @@
     </p>
 
        <h3 id="Conclusion">Conclusion</h3>
-       <p>
+       <p id="Conclusion_InText">
          <pre>
           The removal of heavy metals from drinking water is a crucial step in safeguarding public health, protecting vulnerable populations, and preserving the
            environment. With a variety of removal methods available, such as activated carbon filtration, reverse osmosis and ion exchange, water treatment systems
@@ -265,3 +265,35 @@
 </script>
 
 
+
+
+
+
+       <!-- Placeholder for total word count -->
+<p id="totalWordCount"></p>
+<hr>
+<script>
+  // Function to calculate and display word count for a specified section
+  function displayWordCount(sectionId, outputId) {
+    // Get the text content from the specified section
+    const text = document.getElementById(sectionId).textContent;
+    // Split text into words based on spaces and filter out any empty strings
+    const wordArray = text.trim().split(/\s+/);
+    // Count the words
+    const wordCount = wordArray.length;
+    // Return the word count for summing purposes
+    return wordCount;
+  }
+  // Function to calculate and display total word count from selected sections
+  function displayTotalWordCount() {
+    // Calculate word count for each section and accumulate the total
+    const IntroductionCount = displayWordCount("Introduction_InText");
+    const ConclusionCount = displayWordCount("Conclusion_InText");
+    // Calculate the sum of all selected sections
+    const totalWordCount = IntroductionCount + What Are Heavy Metals and Why Are They a Concern?Count + Methods of Removing Heavy Metals from Drinking WaterCount + Importance of Removing Heavy Metals from Drinking WaterCount + ConclusionCount    ;
+    // Display the total word count
+    document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
+  }
+  // Run the function for specific sections and display total count when the page loads
+  window.onload = displayTotalWordCount;
+</script>
